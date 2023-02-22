@@ -7,14 +7,26 @@
     <title th:text="${titulo}"></title>
   </head>
   <body>
+    <h1 th:text="${resultado}"></h1>
 
-    <h1 th:text="${resultado}">
-    </h1>
 
-    <a
-    th:href="@{/params/(message='Hola mundo')}"
-    >
-    Enviar parametros @{/params/(message='Hola mundo')}
-    </a>
+    <li>
+        <a th:href="@{/params/(message='Hola mundo')}">
+          Enviar parametros @{/params/(message='Hola mundo')}
+        </a>
+      </li>
+
+    <li>
+      <a th:href="@{/params/mix(message='Hola mundo', number=2, decimal=3.8)}">
+        Enviar parametros @{/params/mix(message='Hola mundo', number=2, decimal=3.8)}
+      </a>
+    </li>
+
+
+    <li>
+      <a th:href="@{/params/mix2(message='Hola mundo', number=2, decimal=3.8)}">
+        Enviar parametros mix2 @{/params/mix(message='Hola mundo', number=2, decimal=3.8)}
+      </a>
+    </li>
   </body>
 </html>
